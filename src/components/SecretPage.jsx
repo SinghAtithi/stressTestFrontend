@@ -83,7 +83,7 @@ signed main()
         int t = 1;
         // cin >> t;
         srand(time(0));
-        cout << t << "endl";
+        cout << t << endl;
         while (t--)
         {
                 solve();
