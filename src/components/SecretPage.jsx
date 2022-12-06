@@ -29,6 +29,7 @@ function SecretPage() {
 #include <string>
 #include <utility>
 #include <unordered_map>
+#include<chrono>
 #include <vector>
 #define int int64_t
 #define vi vector<int>
@@ -82,8 +83,10 @@ signed main()
         // cout << setprecision(15);
         int t = 1;
         // cin >> t;
-        srand(time(0));
-        cout << t << endl;
+       using namespace std::chrono;
+        uint64_t ms = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+        srand(ms);
+        // cout << t << endl;
         while (t--)
         {
                 solve();
