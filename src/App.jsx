@@ -19,7 +19,7 @@ function App() {
 					</>
 				}
 			/>
-			<Route path="/shhSecret" element={<SecretPage />} />
+			<Route path="/generate" element={<SecretPage />} />
 		</Routes>
 	);
 }

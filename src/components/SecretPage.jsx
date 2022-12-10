@@ -113,7 +113,7 @@ signed main()
 
 	return (
 		<div className="grid place-items-center h-screen">
-			<Navbar />
+			<Navbar/>
 			<CodeEditor
 				code={codeGen}
 				setCode={setCodeGen}
