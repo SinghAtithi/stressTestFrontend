@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import CodeEditor from "./CodeEditor";
 import axios from "axios";
 function SecretPage() {
-	const snippet = `/*
+  const snippet = `/*
     कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
     मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
 
@@ -94,47 +94,48 @@ signed main()
         }
 }`;
 
-	const [codeGen, setCodeGen] = useState(snippet);
-	const [quesID, setQuesID] = useState("");
+  const [codeGen, setCodeGen] = useState(snippet);
+  const [quesID, setQuesID] = useState("");
 
-	const submitCode = async () => {
-		axios.post("https://stresstest.loca.lt/generateCode", {
-			quesID: quesID,
-			code: codeGen,
-		})
-			.then((response) => {
-				console.log("Data sent");
-				alert(response.data);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	};
+  const submitCode = async () => {
+    axios
+      .post("https://800c-20-127-224-5.ngrok.io/generateCode", {
+        quesID: quesID,
+        code: codeGen,
+      })
+      .then((response) => {
+        console.log("Data sent");
+        alert(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-	return (
-		<div className="grid place-items-center h-screen">
-			<Navbar/>
-			<CodeEditor
-				code={codeGen}
-				setCode={setCodeGen}
-				className="grid h-screen place-items-center"
-			/>
-			<input
-				type="text"
-				placeholder="qustion ID here, e.g : 4A"
-				className="input input-bordered input-success w-full max-w-xs mx-4"
-				onChange={(e) => {
-					setQuesID(e.target.value);
-				}}
-			/>
-			<button
-				className="btn btn-outline btn-success m-4 max-w-xs"
-				onClick={submitCode}
-			>
-				Submit
-			</button>
-		</div>
-	);
+  return (
+    <div className="grid place-items-center h-screen">
+      <Navbar />
+      <CodeEditor
+        code={codeGen}
+        setCode={setCodeGen}
+        className="grid h-screen place-items-center"
+      />
+      <input
+        type="text"
+        placeholder="qustion ID here, e.g : 4A"
+        className="input input-bordered input-success w-full max-w-xs mx-4"
+        onChange={(e) => {
+          setQuesID(e.target.value);
+        }}
+      />
+      <button
+        className="btn btn-outline btn-success m-4 max-w-xs"
+        onClick={submitCode}
+      >
+        Submit
+      </button>
+    </div>
+  );
 }
 
 export default SecretPage;

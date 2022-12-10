@@ -8,19 +8,21 @@ import SecretPage from "./components/SecretPage";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/generate" element={<SecretPage />} />
-      <Route
-        path="/"
-        element={
-          <>
-            <Navbar />
-            <Editor />
-            <Footer />
-          </>
-        }
-      />
-    </Routes>
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Editor />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/generate" element={<SecretPage />} />
+      </Routes>
+    </div>
   );
 }
 
