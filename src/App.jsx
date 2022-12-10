@@ -7,21 +7,21 @@ import Footer from "./components/Footer";
 import SecretPage from "./components/SecretPage";
 
 function App() {
-	return (
-		<Routes>
-			<Route
-				path="/"
-				element={
-					<>
-						<Navbar />
-						<Editor />
-						<Footer />
-					</>
-				}
-			/>
-			<Route path="/generate" element={<SecretPage />} />
-		</Routes>
-	);
+  return (
+    <Routes>
+      <Route path="/generate" element={<SecretPage />} />
+      <Route
+        path="/"
+        element={
+          <>
+            <Navbar />
+            <Editor />
+            <Footer />
+          </>
+        }
+      />
+    </Routes>
+  );
 }
 
 export default App;
