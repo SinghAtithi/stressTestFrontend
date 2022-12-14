@@ -12,7 +12,7 @@ function Editor() {
   const toggleStressTestButton = async () => {
     setStressTestButton(true);
     await axios
-      .post("https://800c-20-127-224-5.ngrok.io/stressTest", {
+      .post("https://stresstest.loca.lt/stressTest", {
         correctCode: correctCode,
         wrongCode: wrongCode,
         quesID: quesID,

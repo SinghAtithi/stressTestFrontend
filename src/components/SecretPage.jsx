@@ -99,7 +99,7 @@ signed main()
 
   const submitCode = async () => {
     axios
-      .post("https://800c-20-127-224-5.ngrok.io/generateCode", {
+      .post("https://stresstest.loca.lt/generateCode", {
         quesID: quesID,
         code: codeGen,
       })
